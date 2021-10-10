@@ -1,5 +1,6 @@
 chrome.browserAction.onClicked.addListener(function (tab) {
-  // No tabs or host permissions needed!
+  // The log is outputed into the extentions' background console 
+  // (which can be found in chrome://extensions)
   console.log("Turning " + tab.url + " red!");
   chrome.tabs.executeScript(
     tab.id,
