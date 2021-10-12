@@ -11,9 +11,17 @@ chrome.pageAction.onClicked.addListener(function (tab) {
       chrome.tabs.executeScript(
         tab.id,
         {
-          file: "./wrapper.js",
+          file: "./axios.min.js",
         },
-        () => chrome.runtime.lastError
+        () => {
+          chrome.tabs.executeScript(
+            tab.id,
+            {
+              file: "./wrapper.js",
+            },
+            () => chrome.runtime.lastError
+          );
+        }
       );
     }
   );
@@ -43,4 +51,3 @@ if (chrome.declarativeContent) {
     chrome.runtime.onInstalled.addListener(observe);
   }
 }
-
