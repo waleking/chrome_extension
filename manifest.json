@@ -1,17 +1,14 @@
 {
-  "name": "Page Redder",
-  "description": "Make the current page red",
+  "name": "Bookmark search engine",
+  "description": "Make the bookmark searchable on the full text",
   "version": "2.0",
-  "permissions": [
-    "activeTab"
-  ],
+  "permissions": ["activeTab", "declarativeContent"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
-  "browser_action": {
-    "default_title": "Make this page red"
+  "page_action": {
+    "browser_style": true
   },
   "manifest_version": 2
 }
-
